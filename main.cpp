@@ -42,10 +42,12 @@ int calcTotal();
 
 // main
 int main() {
+double totalMiles;
+int goal;
 
 cout << "Welcome to my Miles Tracker program." << endl;
 
-getInput(goal)
+getInput(goal);
 if (goal <= 0) {
     cout << "No miles were tracked this week." << endl;
 }
@@ -53,28 +55,45 @@ else {
     calcTotal();
 }
 
+cout << "You rode " << totalMiles << " miles this week." << endl;
+if (totalMiles = goal) {
+  cout << "Good job! You met your goal!" << endl;
+}
+else if (totalMiles > goal) {
+  cout << "Great job! You exceeded your goal by" << (totalMiles - goal) << " miles!" << endl;
+}
+else {
+  cout << "Uh oh! You missed your goal by" << (goal - totalMiles) << "miles!" << endl;
+}
+
+cout << "See you next week!" << endl;
   return 0;
 }
 
 // getInput funct
 void getInput(int &goal) {
-double goal;
-cout << "How many miles do you want to ride this week?";
+cout << "How many miles do you want to ride this week? ";
 cin >> goal;
 }
 
 // calcTotal funct
-double milesDone;
+int calcTotal() {
 double totalMiles;
 double milesToday;
 string days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-for (i = 1; i <= 7; i++) {
+for(int i = 0; i < 7; ++i) {
 cout << "How many miles did you ride on " << days[i] << "? ";
 cin >> milesToday;
-totalMiles += milesToday;
-}
 
+if (milesToday < 0) {
+  cout << "Miles must be 0 or greater!" << endl;
+  i = i - 1;
+  continue;
+}
+}
+return totalMiles += milesToday;
+}
 
 
 
@@ -107,6 +126,65 @@ https://github.com/Glen-Sasek-PCC-Instructor/2025-06-22/blob/main/Pseudocode-Ref
 
 
 SAMPLE RUNS
-Copy from assignment document.
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 50
+How many miles did you ride on Sunday? -9
+Miles must be 0 or greater!
+How many miles did you ride on Sunday? -3
+Miles must be 0 or greater!
+How many miles did you ride on Sunday? 0
+How many miles did you ride on Monday? 10
+How many miles did you ride on Tuesday? 10
+How many miles did you ride on Wednesday? 10
+How many miles did you ride on Thursday? 10
+How many miles did you ride on Friday? 10
+How many miles did you ride on Saturday? 0
+You rode 50 miles this week.
+Good job! You met your goal!
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 100
+How many miles did you ride on Sunday? 10
+How many miles did you ride on Monday? 10
+How many miles did you ride on Tuesday? 10
+How many miles did you ride on Wednesday? 10
+How many miles did you ride on Thursday? 10
+How many miles did you ride on Friday? 10
+How many miles did you ride on Saturday? 10
+You rode 70 miles this week.
+Uh oh! You missed your goal by 30 miles!
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 50
+How many miles did you ride on Sunday? 10
+How many miles did you ride on Monday? 10
+How many miles did you ride on Tuesday? 10
+How many miles did you ride on Wednesday? 10
+How many miles did you ride on Thursday? 10
+How many miles did you ride on Friday? 10
+How many miles did you ride on Saturday? 10
+You rode 70 miles this week.
+Great job! You exceeded your goal by 20 miles!
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? 0
+No miles were tracked this week.
+Keep riding!
+
+
+
+Welcome to my Miles Tracker program.
+How many miles do you want to ride this week? -10
+No miles were tracked this week.
+Keep riding!
 
 */
