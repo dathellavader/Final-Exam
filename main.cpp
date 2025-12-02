@@ -52,7 +52,7 @@ int main()
   {
     totalMiles = calcTotal();
   }
-  while(goal > 0) {
+  if (goal > 0) {
   cout << "You rode " << totalMiles << " miles this week." << endl;
   if (totalMiles == goal)
   {
