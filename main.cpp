@@ -2,34 +2,29 @@
 // Author ✅: Ella Henner
 // Assignment ✅: Final Exam
 // Date ✅: 12/7/25
-// Citations: 
-
+// Citations:
 
 // ------------- ZYBOOKS SCORES -------------
-// Chapter ✅: 
-// Participation ✅: 
+// Chapter ✅:
+// Participation ✅:
 // Challenge ✅:
 // Labs ✅:
-
 
 // ------------- DISCORD POSTS -------------
 // https://discord.com/invite/URYKKf8YHm
 // Count ✅:
-// Links (Optional): 
-
+// Links (Optional):
 
 // ------------- DESIGN DOCUMENT -------------
-// A. INPUT ✅: 
+// A. INPUT ✅:
 // B. OUTPUT ✅:
 // C. CALCULATIONS ✅:
 // D. LOGIC and ALGORITHMS ✅:
-//    (Optional) flow chart link or file name: 
-
+//    (Optional) flow chart link or file name:
 
 // ------------- TESTING -------------
-// PASS ALL GIVEN SAMPLE RUN TESTS ✅: 
-// (Optional) Additional tests count:   
-
+// PASS ALL GIVEN SAMPLE RUN TESTS ✅:
+// (Optional) Additional tests count:
 
 // ------------- CODE -------------
 #include <iostream>
@@ -41,87 +36,95 @@ void getInput(int &goal);
 int calcTotal();
 
 // main
-int main() {
-double totalMiles;
-int goal;
+int main()
+{
+  double totalMiles = 0;
+  int goal = 0;
 
-cout << "Welcome to my Miles Tracker program." << endl;
+  cout << "Welcome to my Miles Tracker program." << endl;
 
-getInput(goal);
-if (goal <= 0) {
+  getInput(goal);
+  if (goal <= 0)
+  {
     cout << "No miles were tracked this week." << endl;
-}
-else {
-    calcTotal();
-}
-
-cout << "You rode " << totalMiles << " miles this week." << endl;
-if (totalMiles = goal) {
-  cout << "Good job! You met your goal!" << endl;
-}
-else if (totalMiles > goal) {
-  cout << "Great job! You exceeded your goal by" << (totalMiles - goal) << " miles!" << endl;
-}
-else {
-  cout << "Uh oh! You missed your goal by" << (goal - totalMiles) << "miles!" << endl;
-}
-
-cout << "See you next week!" << endl;
+  }
+  else
+  {
+    totalMiles = calcTotal();
+  }
+  while(goal > 0) {
+  cout << "You rode " << totalMiles << " miles this week." << endl;
+  if (totalMiles == goal)
+  {
+    cout << "Good job! You met your goal!" << endl;
+  }
+  else if (totalMiles > goal)
+  {
+    cout << "Great job! You exceeded your goal by " << (totalMiles - goal) << " miles!" << endl;
+  }
+  else
+  {
+    cout << "Uh oh! You missed your goal by " << (goal - totalMiles) << " miles!" << endl;
+  }
+  }
+  cout << "See you next week!" << endl;
   return 0;
 }
 
 // getInput funct
-void getInput(int &goal) {
-cout << "How many miles do you want to ride this week? ";
-cin >> goal;
+void getInput(int &goal)
+{
+  cout << "How many miles do you want to ride this week? ";
+  cin >> goal;
 }
 
 // calcTotal funct
-int calcTotal() {
-double totalMiles;
-double milesToday;
-string days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+int calcTotal()
+{
+  double totalMiles = 0;
+  double milesToday = 0;
+  string days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-for(int i = 0; i < 7; ++i) {
-cout << "How many miles did you ride on " << days[i] << "? ";
-cin >> milesToday;
+  for (int i = 0; i < 7; ++i)
+  {
+    cout << "How many miles did you ride on " << days[i] << "? ";
+    cin >> milesToday;
 
-if (milesToday < 0) {
-  cout << "Miles must be 0 or greater!" << endl;
-  i = i - 1;
-  continue;
+    if (milesToday >= 0)
+    {
+      totalMiles += milesToday;
+    }
+    else
+    {
+      cout << "Miles must be 0 or greater!" << endl;
+      i = i - 1;
+    }
+  }
+  return totalMiles;
 }
-}
-return totalMiles += milesToday;
-}
-
-
-
-
-
 
 // ------------- DESIGN -------------
-/* 
+/*
 Program Name:
 
 Program Description:
 
 Design:
 A. INPUT
-Define the input variables including name data type. 
+Define the input variables including name data type.
 
 B. OUTPUT
-Define the output variables including data types. 
+Define the output variables including data types.
 
 C. CALCULATIONS
-Describe calculations used by algorithms in step D.  
-List all formulas. 
+Describe calculations used by algorithms in step D.
+List all formulas.
 If there are no calculations needed, state there are no calculations.
 
 D. LOGIC and ALGORITHMS
-Design the logic of your program using pseudocode or flowcharts. 
+Design the logic of your program using pseudocode or flowcharts.
 Use conditionals, loops, functions or array constructs.
-List the steps in transforming inputs into outputs. 
+List the steps in transforming inputs into outputs.
 https://github.com/Glen-Sasek-PCC-Instructor/2025-06-22/blob/main/Pseudocode-Reference.txt
 
 
