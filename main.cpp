@@ -45,20 +45,35 @@ int main() {
 
 cout << "Welcome to my Miles Tracker program." << endl;
 
-getInput(int &goal)
-
-
+getInput(goal)
+if (goal <= 0) {
+    cout << "No miles were tracked this week." << endl;
+}
+else {
+    calcTotal();
+}
 
   return 0;
 }
 
 // getInput funct
+void getInput(int &goal) {
 double goal;
 cout << "How many miles do you want to ride this week?";
 cin >> goal;
+}
 
+// calcTotal funct
+double milesDone;
+double totalMiles;
+double milesToday;
+string days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-
+for (i = 1; i <= 7; i++) {
+cout << "How many miles did you ride on " << days[i] << "? ";
+cin >> milesToday;
+totalMiles += milesToday;
+}
 
 
 
