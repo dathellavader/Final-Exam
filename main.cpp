@@ -4,31 +4,24 @@
 // Date ✅: 12/7/25
 // Citations:
 
-// ------------- ZYBOOKS SCORES -------------
-// Chapter ✅:
-// Participation ✅:
-// Challenge ✅:
-// Labs ✅:
-
 // ------------- DISCORD POSTS -------------
 // https://discord.com/invite/URYKKf8YHm
-// Count ✅:
+// Count ✅: 1
 // Links (Optional):
 
 // ------------- DESIGN DOCUMENT -------------
-// A. INPUT ✅:
-// B. OUTPUT ✅:
-// C. CALCULATIONS ✅:
-// D. LOGIC and ALGORITHMS ✅:
+// A. INPUT ✅: yes
+// B. OUTPUT ✅: yes
+// C. CALCULATIONS ✅: yes
+// D. LOGIC and ALGORITHMS ✅: yes
 //    (Optional) flow chart link or file name:
 
 // ------------- TESTING -------------
-// PASS ALL GIVEN SAMPLE RUN TESTS ✅:
-// (Optional) Additional tests count:
+// PASS ALL GIVEN SAMPLE RUN TESTS ✅: yes
+// (Optional) Additional tests count: 2
 
 // ------------- CODE -------------
 #include <iostream>
-
 using namespace std;
 
 // funct prototypes
@@ -38,7 +31,7 @@ int calcTotal();
 // main
 int main()
 {
-  double totalMiles = 0;
+  int totalMiles = 0;
   int goal = 0;
 
   cout << "Welcome to my Miles Tracker program." << endl;
@@ -53,7 +46,7 @@ int main()
     totalMiles = calcTotal();
   }
   if (goal > 0) {
-  cout << "You rode " << totalMiles << " miles this week." << endl;
+  cout << "You flew " << totalMiles << " miles this week." << endl;
   if (totalMiles == goal)
   {
     cout << "Good job! You met your goal!" << endl;
@@ -81,8 +74,8 @@ void getInput(int &goal)
 // calcTotal funct
 int calcTotal()
 {
-  double totalMiles = 0;
-  double milesToday = 0;
+  int totalMiles = 0;
+  int milesToday = 0;
   string days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
   for (int i = 0; i < 7; ++i)
@@ -105,27 +98,92 @@ int calcTotal()
 
 // ------------- DESIGN -------------
 /*
-Program Name:
+Program Name: Miles Tracker
 
 Program Description:
 
 Design:
 A. INPUT
-Define the input variables including name data type.
+int goal
+int milesToday
 
 B. OUTPUT
-Define the output variables including data types.
+int totalMiles
+// also difference miles
 
 C. CALCULATIONS
-Describe calculations used by algorithms in step D.
-List all formulas.
-If there are no calculations needed, state there are no calculations.
+totalMiles += milesToday
+totalMiles - goal
+goal - totalMiles
+i = i - 1
 
 D. LOGIC and ALGORITHMS
-Design the logic of your program using pseudocode or flowcharts.
-Use conditionals, loops, functions or array constructs.
-List the steps in transforming inputs into outputs.
-https://github.com/Glen-Sasek-PCC-Instructor/2025-06-22/blob/main/Pseudocode-Reference.txt
+// funct prototypes
+void getInput(int &goal);
+int calcTotal();
+
+// main funct
+  MESSAGE "Welcome to my Miles Tracker program"
+
+  CALL getInput(goal);
+  IF (goal <= 0)
+  {
+    DISPLAY "No miles were tracked this week."
+  }
+  ELSE
+  {
+    totalMiles = calcTotal();
+  }
+  IF (goal > 0) {
+  DISPLAY "You flew " totalMiles " miles this week.""
+  IF (totalMiles == goal)
+  {
+    DISPLAY "Good job! You met your goal!"
+  }
+  ELSE IF (totalMiles > goal)
+  {
+    DISLAY "Great job! You exceeded your goal by " // goal calc " miles!"
+  }
+  ELSE
+  {
+    DISPLAY "Uh oh! You missed your goal by " // do calc " miles!"
+  }
+  }
+  MESSAGE "See you next week!"
+  RETURN 0;
+}
+
+// getInput funct
+VOID getInput(int &goal)
+{
+  DISPLAY "How many miles do you want to ride this week? "
+  INPUT goal
+}
+
+// calcTotal funct
+INT calcTotal()
+{
+  int totalMiles
+  int milesToday
+  string days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+
+  FOR (int i = 0; i < 7; ++i)
+  {
+    DISPLAY "How many miles did you ride on " days[i] "? "
+    cin >> milesToday;
+
+    IF (milesToday >= 0)
+    {
+      // do calc
+    }
+    ELSE
+    {
+      DISPLAY "Miles must be 0 or greater!"
+      // do calc
+    }
+  }
+  RETURN totalMiles
+}
 
 
 SAMPLE RUNS
