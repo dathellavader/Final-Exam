@@ -67,7 +67,7 @@ int main()
 // getInput funct
 void getInput(int &goal)
 {
-  cout << "How many miles do you want to ride this week? ";
+  cout << "How many miles do you want to fly this week? ";
   cin >> goal;
 }
 
